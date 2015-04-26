@@ -31,3 +31,5 @@ config :door_api, DoorApi.Repo,
   username: "postgres",
   password: "",
   database: "door_api_dev"
+
+import_config "dev.secret.exs"

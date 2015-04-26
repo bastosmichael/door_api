@@ -17,7 +17,7 @@ defmodule DoorApi.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {DoorApi, []},
-     applications: [:phoenix, :cowboy, :logger, :ecto]]
+     applications: [:phoenix, :cowboy, :logger, :ecto, :hackney]]
   end
 
   # Specifies which paths to compile per environment
@@ -29,8 +29,10 @@ defmodule DoorApi.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [{:phoenix, "~> 0.11"},
-     {:elixir_ale, github: "fhunleth/elixir_ale"},
+     {:elixir_ale, github: "fhunleth/elixir_ale", only: :prod},
+     {:remodel, "~> 0.0.1"},
      {:phoenix_ecto, "~> 0.3"},
+     {:oauth2, "~> 0.1.1"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_live_reload, "~> 0.3"},
      {:cowboy, "~> 1.0"}]

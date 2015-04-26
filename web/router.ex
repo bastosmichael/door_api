@@ -10,9 +10,13 @@ defmodule DoorApi.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
   end
 
-  scope "/api", DoorApi do
+  scope "/api", DoorApi.Api do
     pipe_through :api
+    scope "v1", V1 do
+      post "session", SessionController, :create
+    end
   end
 end

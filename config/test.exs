@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :door_api, DoorApi.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "door_api_test",
   size: 1,
   max_overflow: false
